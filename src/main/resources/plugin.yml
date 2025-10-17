@@ -1,5 +1,5 @@
 name: BlockyFix
-main: com.blockycraft.toolfix.BlockyFix
+main: com.blockycraft.blockyfix.BlockyFix
 version: 1.0
 author: Zukerman
 description: Corrige o bug da velocidade de quebra de blocos na Beta 1.7.3.
