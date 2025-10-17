@@ -1,0 +1,36 @@
+# =================================================================
+# Configuração do BlockyFix (Versão baseada em IDs)
+# =================================================================
+# Adicione os blocos no formato "ID:DATA".
+# Use o BlockInspector para descobrir o ID e a DATA de qualquer bloco.
+# Para blocos que não usam data, use :0 (ex: "58:0" para a bancada).
+
+tools:
+  # Blocos que serão quebrados instantaneamente com picaretas.
+  # IDs de exemplo: 61=Fornalha, 67=Escada de Pedra, 45=Tijolos
+  pickaxes:
+    - "61:0" # FURNACE
+    - "62:0" # BURNING_FURNACE
+    - "67:0" # COBBLESTONE_STAIRS
+    - "45:0" # BRICK
+    - "73:0" # REDSTONE_ORE
+    - "74:0" # GLOWING_REDSTONE_ORE
+    - "71:0" # IRON_DOOR_BLOCK
+    - "66:0" # RAILS
+    - "23:0" # DISPENSER
+    - "70:0" # STONE_PLATE
+    - "52:0" # MOB_SPAWNER
+    - "44:0" # Laje de Pedra (STEP)
+    - "43:0" # Laje Dupla de Pedra (DOUBLE_STEP)
+
+  # Blocos que serão quebrados instantaneamente com machados.
+  axes:
+    - "58:0" # WORKBENCH
+    - "5:0" # WOOD (Planks)
+    - "17:0" # LOG (Carvalho)
+    - "17:1" # LOG (Pinheiro)
+    - "17:2" # LOG (Bétula)
+    - "53:0" # WOOD_STAIRS
+    - "85:0" # FENCE
+    - "64:0" # WOODEN_DOOR
+    - "44:2" # Exemplo para Laje de Madeira (STEP com data 2)
