@@ -14,4 +14,4 @@ BlockyFix é um plugin para servidores Minecraft Beta 1.7.3 que corrige o bug re
 - Reinicie o servidor
 
 # Configuração
-O arquivo `config.yml` permite definir, por ID e DATA, quais blocos serão instantaneamente quebrados por qual ferramenta. Confira IDs usando plugins como [BlockInspector](tab:https://github.com/andradecore/BlockInspector).
+O arquivo `config.yml` permite definir, por ID e DATA, quais blocos serão instantaneamente quebrados por qual ferramenta. Confira IDs usando plugins como [BlockInspector](https://github.com/andradecore/BlockInspector).
