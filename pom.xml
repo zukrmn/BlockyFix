@@ -37,6 +37,13 @@
             <scope>system</scope>
             <systemPath>${minecraft.server.path}/server.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.blockycraft</groupId>
+            <artifactId>BlockyClaim</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${minecraft.server.path}/plugins/BlockyClaim.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>

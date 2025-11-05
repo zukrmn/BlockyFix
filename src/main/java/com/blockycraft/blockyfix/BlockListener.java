@@ -11,6 +11,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.inventory.ItemStack;
+import com.blockycraft.blockyclaim.BlockyClaim;
+import com.blockycraft.blockyclaim.data.Claim;
 
 public class BlockListener implements Listener {
 
@@ -22,13 +24,15 @@ public class BlockListener implements Listener {
         this.pickaxeBlockRules = pickaxeBlockRules;
     }
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void onBlockDamage(BlockDamageEvent event) {
         Player player = event.getPlayer();
         Block block = event.getBlock();
         ItemStack toolInHand = player.getItemInHand();
 
         if (toolInHand == null || toolInHand.getType() == Material.AIR) { return; }
+
+        if (!canBuild(player, block.getLocation())) { return; }
 
         int toolId = toolInHand.getTypeId();
         int blockId = block.getTypeId();
@@ -111,5 +115,14 @@ public class BlockListener implements Listener {
     private boolean isPickaxe(int toolId) {
         // IDs: 270=WOOD, 274=STONE, 257=IRON, 278=DIAMOND, 285=GOLD
         return toolId == 270 || toolId == 274 || toolId == 257 || toolId == 278 || toolId == 285;
+    }
+
+    private boolean canBuild(Player player, Location location) {
+        BlockyClaim blockyClaim = (BlockyClaim) player.getServer().getPluginManager().getPlugin("BlockyClaim");
+        if (blockyClaim == null) {
+            return true; 
+        }
+        Claim claim = blockyClaim.getClaimManager().getClaimAt(location);
+        return claim == null || claim.hasPermission(player.getName());
     }
 }
