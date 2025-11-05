@@ -13,6 +13,7 @@ import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.inventory.ItemStack;
 import com.blockycraft.blockyclaim.BlockyClaim;
 import com.blockycraft.blockyclaim.data.Claim;
+import org.bukkit.event.entity.EntityExplodeEvent;
 
 public class BlockListener implements Listener {
 
@@ -44,6 +45,23 @@ public class BlockListener implements Listener {
         if (isRuleMet) {
             event.setCancelled(true);
             handleManualBreak(player, block, toolInHand);
+        }
+    }
+
+    @EventHandler
+    public void onEntityExplode(EntityExplodeEvent event) {
+        Location loc = event.getLocation();
+        for (int x = -4; x <= 4; x++) {
+            for (int y = -4; y <= 4; y++) {
+                for (int z = -4; z <= 4; z++) {
+                    Block block = loc.clone().add(x, y, z).getBlock();
+                    if (block.getType() == Material.OBSIDIAN) {
+                        if (block.getLocation().distance(loc) <= 4) {
+                            event.blockList().add(block);
+                        }
+                    }
+                }
+            }
         }
     }
 
