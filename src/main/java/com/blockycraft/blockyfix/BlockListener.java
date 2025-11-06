@@ -68,7 +68,7 @@ public class BlockListener implements Listener {
     private void handleManualBreak(Player player, Block block, ItemStack tool) {
         int blockId = block.getTypeId();
 
-        if (blockId == 64 || blockId == 71) {
+        if (blockId == 71) {
             byte data = block.getData();
             Block otherHalf = (data & 8) == 8 ? block.getRelative(BlockFace.DOWN) : block.getRelative(BlockFace.UP);
             if (otherHalf.getTypeId() == blockId) {
@@ -108,7 +108,6 @@ public class BlockListener implements Listener {
             case 21: return new ItemStack[]{new ItemStack(351, (int)(Math.random() * 5) + 4, (short) 4)}; // LAPIS_ORE -> INK_SACK (Lapis)
             case 56: return new ItemStack[]{new ItemStack(264, 1)}; // DIAMOND_ORE -> DIAMOND
             case 73: case 74: return new ItemStack[]{new ItemStack(331, (int)(Math.random() * 2) + 4)}; // REDSTONE_ORE -> REDSTONE
-            case 64: return new ItemStack[]{new ItemStack(324, 1)}; // WOODEN_DOOR -> WOOD_DOOR item
             case 71: return new ItemStack[]{new ItemStack(330, 1)}; // IRON_DOOR_BLOCK -> IRON_DOOR item
             case 43: return new ItemStack[]{new ItemStack(44, 2, data)}; // DOUBLE_STEP -> 2x STEP
             
