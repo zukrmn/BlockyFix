@@ -26,10 +26,6 @@ tools:
   # Blocos que serão quebrados instantaneamente com machados.
   axes:
     - "58:0" # WORKBENCH
-    - "5:0" # WOOD (Planks)
-    - "17:0" # LOG (Carvalho)
-    - "17:1" # LOG (Pinheiro)
-    - "17:2" # LOG (Bétula)
     - "53:0" # WOOD_STAIRS
     - "85:0" # FENCE
     - "64:0" # WOODEN_DOOR
