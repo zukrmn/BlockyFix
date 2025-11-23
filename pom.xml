@@ -34,21 +34,44 @@
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
             <version>1.7.3-beta-SNAPSHOT</version> <!-- A versão é apenas descritiva -->
-            <scope>system</scope>
-            <systemPath>${minecraft.server.path}/server.jar</systemPath>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.blockycraft</groupId>
             <artifactId>BlockyClaim</artifactId>
             <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${minecraft.server.path}/plugins/BlockyClaim.jar</systemPath>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
         <defaultGoal>clean package</defaultGoal>
         <finalName>${project.artifactId}</finalName>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.4.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.3.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.5.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.4.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.1.3</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
 
         <plugins>
             <!-- Plugin do Compilador Java -->
